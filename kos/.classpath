@@ -11,5 +11,6 @@
 	<classpathentry kind="src" path="3월30일"/>
 	<classpathentry kind="src" path="3월31일"/>
 	<classpathentry kind="src" path="4월1일"/>
+	<classpathentry kind="src" path="JavaJDBC"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
