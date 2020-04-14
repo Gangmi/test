@@ -3,11 +3,14 @@ package basic;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class TestSelect {
 
 	public static void main(String[] args) {
+		
+		Connection con = null; // 참조형 초기화는 null
 		
 		
 		try {
@@ -15,7 +18,7 @@ public class TestSelect {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
 			//2.커넥션 얻어오기
-			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.18:1521:orcl","scott","tiger");
+			 con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.18:1521:orcl","scott","tiger");
 			//3.sql 문장
 			String sql = "select empno,ename,sal,job from emp";
 			//4.전송객체 얻어오기
@@ -35,13 +38,20 @@ public class TestSelect {
 			//7.닫기
 			rs.close();
 			st.close();
-			con.close();
+			
 			
 			
 			
 			
 		}catch (Exception e){
 			System.out.println("실패 : " + e.getMessage());
+			
+		}finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+			
+			} // try 블럭안에 있기 때문에 con을 인식을 못함
 			
 		}
 		
