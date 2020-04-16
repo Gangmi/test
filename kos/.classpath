@@ -12,6 +12,7 @@
 	<classpathentry kind="src" path="3월31일"/>
 	<classpathentry kind="src" path="4월1일"/>
 	<classpathentry kind="src" path="JavaJDBC"/>
+	<classpathentry kind="src" path="burger"/>
 	<classpathentry kind="lib" path="JavaJDBC/jfreechart/libs/jcommon-1.0.23.jar"/>
 	<classpathentry kind="lib" path="JavaJDBC/jfreechart/libs/jfreechart-1.0.19.jar"/>
 	<classpathentry kind="src" path="src"/>
