@@ -5,7 +5,9 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Dimension;
@@ -23,7 +25,7 @@ public class JF_main extends JFrame implements ActionListener {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		
+
 		JF_main main = new JF_main();
 
 		main.eventProc();
@@ -44,8 +46,6 @@ public class JF_main extends JFrame implements ActionListener {
 		P_login = new P_login();
 		P_menu = new P_menu();
 
-		
-
 		contentPane.add(P_login);
 		contentPane.add(P_menu);
 
@@ -54,10 +54,15 @@ public class JF_main extends JFrame implements ActionListener {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	}
+
 	public void eventProc() {
-		//생성한 객체의 각 버튼에 대한 이벤트 생성
+		// 생성한 객체의 각 버튼에 대한 이벤트 생성
 		P_login.btn_access.addActionListener(this);
-		
+		for (int i = 0; i < P_menu.btn_burger.length; i++) {
+			P_menu.btn_burger[i].addActionListener(this);
+
+		}
+
 	}
 
 	@Override
@@ -67,8 +72,18 @@ public class JF_main extends JFrame implements ActionListener {
 			cl.next(contentPane);
 
 		}
+		for (int i = 0; i < P_menu.btn_burger.length; i++) {
+			if (evt == P_menu.btn_burger[i]) {
+				String answer[] = { "세트", "단품" };
+				int ans = JOptionPane.showOptionDialog(this, "세트 단품 선택", "SET CHECK", JOptionPane.YES_NO_CANCEL_OPTION,
+						JOptionPane.INFORMATION_MESSAGE, null, answer, answer[0]);
+			}
+		}
+		
+		
+		
+		
 
 	}
-	
 
 }

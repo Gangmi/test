@@ -140,18 +140,18 @@ public class CustomerModel implements CustomerDao {
 				ct.add(dao);
 				
 			}
-			JList list = new JList();
-			JDialog jd = new JDialog();
-			
-			DefaultListModel<String> wish = new DefaultListModel<String>(); 
-			
-			JScrollPane list_P = new JScrollPane();
-			list_P.setPreferredSize(new Dimension(300,150));
-			
-			for(int i =0; i<ct.size(); i++) {
-				list.add(ct.get(i).getCustName()+"  "+ct.get(i).getCustTel1()+"\n");
-				
-			}
+//			JList list = new JList();
+//			JDialog jd = new JDialog();
+//			
+//			DefaultListModel<String> wish = new DefaultListModel<String>(); 
+//			
+//			JScrollPane list_P = new JScrollPane();
+//			list_P.setPreferredSize(new Dimension(300,150));
+//			
+//			for(int i =0; i<ct.size(); i++) {
+//				list.add(ct.get(i).getCustName()+"  "+ct.get(i).getCustTel1()+"\n");
+//				
+//			}
 			
 			
 			

@@ -48,10 +48,10 @@ public class VideoView extends JPanel {
 	// ##############################################
 	// constructor method
 	public VideoView() {
+		connectDB(); // DB연결
 		addLayout(); // 화면설계
 		initStyle();
 		eventProc();
-		connectDB(); // DB연결
 	}
 
 	public void connectDB() { // DB연결

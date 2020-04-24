@@ -23,6 +23,7 @@ import javax.swing.UIManager;
 import javax.swing.plaf.ColorUIResource;
 import javax.swing.plaf.TabbedPaneUI;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 public class P_menu extends JPanel  {
 	private JTable table;
@@ -61,10 +62,7 @@ public class P_menu extends JPanel  {
 		tabbedPane.addTab("  햄버거   ", null, P_burger, null);
 		P_burger.setLayout(new GridLayout(3, 3));
 
-		JPanel P_set = new JPanel();
-		tabbedPane.addTab("  세트  ", null, P_set, null);
-		P_set.setLayout(new GridLayout(3, 3));
-
+		
 		JPanel P_side = new JPanel();
 		tabbedPane.addTab("  사이드  ", null, P_side, null);
 		P_side.setLayout(new GridLayout(3, 3));
@@ -101,7 +99,7 @@ public class P_menu extends JPanel  {
 
 			// 위에서 생성한 버튼을 각 매뉴의 패널에 붙임
 			P_burger.add(btn_burger[i]);
-			P_set.add(btn_set[i]);
+			
 			P_side.add(btn_side[i]);
 			P_drink.add(btn_drink[i]);
 
@@ -140,14 +138,14 @@ public class P_menu extends JPanel  {
 				
 				
 
-		JScrollPane scrollPane = new JScrollPane();
-		JTable jtable = new JTable();
-		jtable.setModel(new DefaultTableModel(new Object[][] {}, new String[] { "품명", "수량", "가격" }));
-		jtable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		jtable.setFillsViewportHeight(true);
-		jtable.setColumnSelectionAllowed(true);
-		jtable.setCellSelectionEnabled(true);
-		scrollPane.add(jtable);
+		TableModel TM_menu = new DefaultTableModel(new Object[][] {}, new String[] { "품명", "수량", "가격" });
+		JTable jtable = new JTable(TM_menu);
+		JScrollPane scrollPane = new JScrollPane(jtable);
+		
+		
+		
+		
+		
 
 		scrollPane.setBounds(872, 104, 370, 324);
 		add(scrollPane);
